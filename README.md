@@ -1,0 +1,3 @@
+# Holberton School Low Level Programming
+
+This repository contains C programming projects and exercises completed as part of the Holberton School curriculum.
