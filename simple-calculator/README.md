@@ -15,4 +15,10 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 calculator.c -o calculator
 
 ## Usage
 ./calculator
+## Number Type
 
+The calculator uses double-precision floating-point
+numbers for all arithmetic operations.
+
+Division supports decimal results.
+Division by zero displays an error message.

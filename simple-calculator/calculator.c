@@ -2,14 +2,14 @@
 #include <stdio.h>
 
 /**
- * main - Simple calculator with basic operations
+ * main - Simple calculator with four operations
  *
- * Return: 0 on success
+ * Return: 0 on success, 1 on invalid input
  */
 int main(void)
 {
     int choice;
-    int a, b;
+    double a, b, result;
 
     do {
         printf("Simple Calculator\n");
@@ -27,43 +27,35 @@ int main(void)
         {
             printf("Bye!\n");
         }
-        else if (choice == 1)
+        else if (choice >= 1 && choice <= 4)
         {
             printf("A: ");
-            if (scanf("%d", &a) != 1)
+            if (scanf("%lf", &a) != 1)
                 return (1);
 
             printf("B: ");
-            if (scanf("%d", &b) != 1)
+            if (scanf("%lf", &b) != 1)
                 return (1);
 
-            printf("Result: %d\n", a + b);
+            if (choice == 4 && b == 0)
+            {
+                printf("Error: division by zero\n");
+            }
+            else
+            {
+                if (choice == 1)
+                    result = a + b;
+                else if (choice == 2)
+                    result = a - b;
+                else if (choice == 3)
+                    result = a * b;
+                else
+                    result = a / b;
+
+                printf("Result: %g\n", result);
+            }
         }
-        else if (choice == 2)
-        {
-            printf("A: ");
-            if (scanf("%d", &a) != 1)
-                return (1);
-
-            printf("B: ");
-            if (scanf("%d", &b) != 1)
-                return (1);
-
-            printf("Result: %d\n", a - b);
-        }
-        else if (choice == 3)
-        {
-            printf("A: ");
-            if (scanf("%d", &a) != 1)
-                return (1);
-
-            printf("B: ");
-            if (scanf("%d", &b) != 1)
-                return (1);
-
-            printf("Result: %d\n", a * b);
-        }
-        else if (choice < 0 || choice > 4)
+        else
         {
             printf("Invalid choice\n");
         }
