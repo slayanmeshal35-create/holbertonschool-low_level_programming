@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * main - Simple calculator with addition
+ * main - Simple calculator with addition and subtraction
  *
  * Return: 0 on success
  */
@@ -39,6 +39,18 @@ int main(void)
 
             printf("Result: %d\n", a + b);
         }
+        else if (choice == 2)
+        {
+            printf("A: ");
+            if (scanf("%d", &a) != 1)
+                return (1);
+
+            printf("B: ");
+            if (scanf("%d", &b) != 1)
+                return (1);
+
+            printf("Result: %d\n", a - b);
+        }
         else if (choice < 0 || choice > 4)
         {
             printf("Invalid choice\n");
@@ -48,4 +60,3 @@ int main(void)
 
     return (0);
 }
-
